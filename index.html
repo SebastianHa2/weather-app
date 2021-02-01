@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="weather-icons-wind.css">
+    <link rel="stylesheet" href="weather-icons.css">
+    <link rel="stylesheet" href="weather-icons-wind.min.css">
+    <link rel="stylesheet" href="weather-icons.min.css">
+    <title>Weather API</title>
+</head>n
+<body>
+    <div class="container">
+        <!-- WARNING DISPLAY -->
+        <div id="warning">
+            <p>Please make sure the City and Country are correct!</p>
+        </div>
+        <!-- LOCATION SEARCH AND DISPLAY SECTION -->
+        <div class="location-section">
+            <h1 id="location">Weather Anywhere</h1>
+            <div class="search-container">
+                <input type="text" id="find-location" placeholder="Enter a City">
+                <label for="country">Select the country</label>
+                <select name="country" id="country">
+
+                </select>
+                <input type="submit" id="search" value="Search">
+            </div>
+        </div>
+
+        <!-- WEATHER DISPLAY SECTION -->
+        <div class="weather-section">
+            <!-- FLIP THE CARD BUTTON -->
+            <a href="#" id="change-information">See more</a>
+            <div class="weather-today">
+
+                <!-- FRONT FACE OF TODAY'S WEATHER -->
+                <div class="display-weather-today today show">
+                    <h2 id="today-date"></h2>
+                   <i class="" id="icon-1"></i>
+                   <div class="weather-information-today">
+                   </div>
+                </div>
+
+                <!-- BACK FACE OF TODAY'S WEATHER -->
+                <div class="display-weather-today more hide">
+                   <div class="weather-information-today more-info">
+                       <p>Pressure: ###</p>
+                       <img src="img/sunrise1.png" alt="sunrise">
+                       <p>Sunrise at: ### </p>
+                       <img src="img/sunset1.png" alt="sunset">
+                       <p>Sunset at: ###</p>
+                   </div>
+                </div>
+
+            </div>
+            <!-- WEATHER FOR THE NEXT THREE DAYS  -->
+            <div class="weather-next-three-days">
+                <div class="display-weather weather-1">
+                    <h2 id="date-0"></h2>
+                    <i class="" id="icon-2"></i>
+                    <div class="weather-information-1">
+                    </div>
+                 </div>
+                 <div class="display-weather weather-2">
+                    <h2 id="date-1"></h2>
+                    <i class="" id="icon-3"></i>
+                    <div class="weather-information-2">
+                    </div>
+                 </div>
+                 <div class="display-weather weather-3">
+                    <h2 id="date-2"></h2>
+                    <i class="" id="icon-4"></i>
+                    <div class="weather-information-3">
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <p class="created-by">Created by Sebastian Haczela</p>
+    
+    <!-- JAVASCRIPT FILES -->
+
+    <!-- USED FOR DROP DOWN MENU AS THERE WERE MIX-UPS WITH DUPLICATE CITY NAMES IN DIFFERENT COUNTRIES-->
+    <script src="countrynames.js"></script>
+    <!-- CITY ID'S TO GET WEATHER BY -->
+    <script src="cities.js"></script>
+    <script src="library.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
