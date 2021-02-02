@@ -36,41 +36,22 @@ function searchWeather(){
 
   // FETCHING THE WEATHER FOR THE NEXT THREE DAYS 
   http.sendHttpRequest(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=9f49053296577327d4f6976bd0e2f5ee`).then(rd=> {
-    console.log(rd)
-    console.log(new Date(rd.list[1].dt * 1000).toISOString())
-
     // UPDATING THE WEATHER INFORMATION FOR THE NEXT THREE DAYS
-    ui.setTheNextThreeDays(".weather-information-1", rd.list[1].weather[0].description, rd.list[1].clouds.all, rd.list[1].main.temp, rd.list[1].main.humidity, rd.list[1].wind.speed)
-
-    ui.setTheNextThreeDays(".weather-information-2", rd.list[2].weather[0].description, rd.list[2].clouds.all, rd.list[2].main.temp, rd.list[2].main.humidity, rd.list[2].wind.speed)
-
-    ui.setTheNextThreeDays(".weather-information-3", rd.list[3].weather[0].description, rd.list[3].clouds.all, rd.list[3].main.temp, rd.list[3].main.humidity, rd.list[3].wind.speed)
+    for(let i = 1; i < 4; i++){
+      ui.setTheNextThreeDays(`.weather-information-${i}`, rd.list[i].weather[0].description, rd.list[i].clouds.all, rd.list[i].main.temp, rd.list[i].main.humidity, rd.list[i].wind.speed)
+    }
 
     // UPDATING THE WEATHER ICONS FOR THE NEXT THREE DAYS 
     // CHECK IF PROPERTY MAIN IS "Clouds" IF SO THERE IS MORE THAN ONE ICON
     // AVAILABLE FOR CLOUDS DEPENDING ON THE INTENSITY
-    if(rd.list[1].weather[0].main == "Clouds"){
-      ui.updateIcons(rd.list[1].weather[0].description, "2")
-
-    }
-    else{
-      ui.updateIcons(rd.list[1].weather[0].main, "2")
-    }
-
-    if(rd.list[2].weather[0].main == "Clouds"){
-      ui.updateIcons(rd.list[2].weather[0].description, "3")
-
-    }
-    else{
-      ui.updateIcons(rd.list[2].weather[0].main, "3")
-    }
-
-    if(rd.list[3].weather[0].main == "Clouds"){
-      ui.updateIcons(rd.list[3].weather[0].description, "4")
-
-    }
-    else{
-      ui.updateIcons(rd.list[3].weather[0].main, "4")
+    for(let i = 1; i < 4; i++){
+      if(rd.list[i].weather[0].main == "Clouds"){
+        ui.updateIcons(rd.list[i].weather[0].description, `${i+1}`)
+  
+      }
+      else{
+        ui.updateIcons(rd.list[i].weather[0].main, `${i+1}`)
+      }
     }
   
   })
@@ -163,7 +144,7 @@ class UImodification{
         case "Clear":
           document.getElementById(`icon-${iconNum}`).className = "wi wi-forecast-io-clear-day"
           break
-        case " few clouds":
+        case "few clouds":
           document.getElementById(`icon-${iconNum}`).className = "wi wi-forecast-io-partly-cloudy-day"
           break
         case "scattered clouds":
