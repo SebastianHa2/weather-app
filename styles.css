@@ -295,6 +295,16 @@ body{
 
 /* MEDIA QUERIES */ 
 
+@media(max-width: 900px){
+    .container{
+        width: 70%;
+    }
+
+    .display-weather-today i{
+        font-size: 5rem;
+    }
+}
+
 @media(max-width: 800px){
     #location{
         font-size: 2rem;
@@ -317,9 +327,23 @@ body{
         width: 80%;
         text-align: center;
     }
+
+    .weather-information-today p{
+        font-size: 1.5rem;
+    }
 }
 
-@media(max-width: 550px){
+@media(max-width: 700px){
+    .display-weather-today i{
+        font-size: 4rem;
+    }
+
+    .display-weather i{
+        margin: 0 0 1rem 0;
+    }
+}
+
+@media(max-width: 600px){
     #change-information{
         font-size: 1rem;
     }
@@ -350,6 +374,10 @@ body{
     .weather-today
     {
         width: 70%;
+    }
+
+    .more-info img{
+        width: 8rem;
     }
 }
 
@@ -387,7 +415,7 @@ body{
 
 @media(max-height: 650px){
     .display-weather-today i{
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .display-weather i{
@@ -395,10 +423,14 @@ body{
     }
 
     .display-weather p{
-        margin: 0.7rem 0;
+        margin: 1rem 0;
     }
 
     .weather-information-today p{
-        margin-top: 0.3rem;
+        margin-top: 0.6rem;
+    }
+
+    .container{
+        height: 90vh;
     }
 }
