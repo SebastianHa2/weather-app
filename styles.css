@@ -384,3 +384,21 @@ body{
         width: 90%;
     }
 }
+
+@media(max-height: 650px){
+    .display-weather-today i{
+        font-size: 4rem;
+    }
+
+    .display-weather i{
+        margin: 0 0 1rem 0;
+    }
+
+    .display-weather p{
+        margin: 0.7rem 0;
+    }
+
+    .weather-information-today p{
+        margin-top: 0.3rem;
+    }
+}
