@@ -1,0 +1,37 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "get the weather app",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianHa2/weather-app.git"
+  },
+  "keywords": [
+    "weather",
+    "app"
+  ],
+  "author": "sebastian haczela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebastianHa2/weather-app/issues"
+  },
+  "homepage": "https://github.com/SebastianHa2/weather-app#readme",
+  "devDependencies": {
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.2",
+    "browserify": "^17.0.0",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^7.0.1",
+    "path-browserify": "^1.0.1",
+    "requirejs": "^2.3.6",
+    "shebang-loader": "^0.0.1",
+    "webpack-dotenv-plugin": "^2.1.0"
+  }
+}
